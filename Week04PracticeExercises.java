@@ -1,8 +1,10 @@
 package week04;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -98,8 +100,21 @@ public class Week04PracticeExercises {
 		}
 		
 		//To remove a string from a list, we use remove and the index number of the String
-		System.out.println("The removed string is " + sports.remove(1));
+		System.out.println("\nThe removed string is " + sports.remove(1));
 		System.out.println(sports);
+		
+		//Using the method get in a List
+		
+		List<Integer> numbers = new ArrayList<Integer>();
+		
+		numbers.add(1);
+		numbers.add(2);
+		numbers.add(3);
+		
+		System.out.println("\n- The first number is " + numbers.get(0)); //The .get() method return the element at the specified index.
+		
+		System.out.println("\n- The number being removed is " + numbers.remove(1));
+		System.out.println("- The remaining numbers are " + numbers);
 		
 		
 		//COLLECTIONS - SET (HashSet, TreeSet, and LinkedHashSet)
@@ -110,7 +125,7 @@ public class Week04PracticeExercises {
 		Set<String> vegetables = new HashSet<String>();
 		
 		vegetables.add("carrot");
-		System.out.println(vegetables);
+		System.out.println("\n" + vegetables);
 		vegetables.add("onion");
 		System.out.println(vegetables);
 		vegetables.add("broccoli");
@@ -136,6 +151,71 @@ public class Week04PracticeExercises {
 		racerPlacements.put(3,"John");
 		
 		System.out.println(racerPlacements);
+		
+		//Finding the last element in a List
+		
+		List<Integer> newInts = new ArrayList<>();
+		newInts.add(143);
+		newInts.add(-93);
+		newInts.add(54992);
+		newInts.add(17);
+
+		System.out.println(newInts.get(newInts.size() - 1));
+		
+		//Sorting a List of integers following a Listing of the elements
+		
+		List<Integer> ourInts = new ArrayList<>();
+		ourInts.add(894);
+		ourInts.add(-1);
+		ourInts.add(1077);
+		ourInts.add(43);
+		ourInts.add(54329);
+
+		Collections.sort(ourInts); //Sorts the specified list into ascending order, according to the natural ordering of its elements
+		System.out.println("\n- The ordered/sorted list is as follows:\n\t" + ourInts);
+		
+		//squaring a number in Java examples
+		
+		int thisNum = 5;
+		System.out.println("\n- The square is " + thisNum* thisNum);
+		
+		System.out.println("\n- Or a double result of " + Math.pow(thisNum, 2));
+		
+		//alphabet exercise 
+		
+		List<Character> alphabet = new ArrayList<>();
+		for(int i = 97; i < (97 + 26); i++){
+		    alphabet.add((char)i);
+		}
+
+		alphabet.remove(0);
+		System.out.println("\nThe remaining alphabet is:\n\t" + alphabet);
+		
+		
+		//LinkedList example (good choice when frequent insertions or deletions in the middle of the List are expected.
+		//whereas ArrayList is a good choice when random access to elements is important
+		
+		LinkedList<String> shoppingList = new LinkedList<>();
+		
+		shoppingList.add("apples");
+		shoppingList.add("bread");
+		shoppingList.add("bananas");
+		shoppingList.add("milk");
+		shoppingList.add("cheese");
+		shoppingList.add("eggs");
+		shoppingList.add("ham");
+		
+		System.out.println("\nThe shopping list contains " + shoppingList);
+		
+		//we can use a for loop as well
+		for (String item: shoppingList) {
+			System.out.println("- " + item);
+		}
+		
+		//using the remove method
+		shoppingList.remove(2);
+		System.out.println("\nThe remaining shopping list items are " + shoppingList);
+		
 		
 		
 		
