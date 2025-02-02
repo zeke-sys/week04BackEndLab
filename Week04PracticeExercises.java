@@ -142,7 +142,7 @@ public class Week04PracticeExercises {
 		
 		//Collections - MAP (HashMap, ...)
 		//key value pairs (as in a dictionary)
-		//values can be duplicate but not keys (only oneKw
+		//values can be duplicate but not keys (only one key)
 		
 		Map<Integer, String> racerPlacements = new HashMap<Integer, String>();
 		
@@ -216,6 +216,41 @@ public class Week04PracticeExercises {
 		shoppingList.remove(2);
 		System.out.println("\nThe remaining shopping list items are " + shoppingList);
 		
+		//Practicing List slashed in halves
+		
+		List<String> listOfNames = new ArrayList<>();
+		
+		listOfNames.add("guy");
+		listOfNames.add("janet");
+		listOfNames.add("john");
+		listOfNames.add("michael");
+		listOfNames.add("nick");
+		
+		System.out.println("\n" + listOfNames);
+		
+		List<String> resultList = halfTheList(listOfNames);
+		
+		System.out.println(resultList);
+		
+		
+		//Practice exercise with key pairs method
+		
+		Map<String, String> dictionary = new HashMap<String, String>();
+		
+		dictionary.put("Good morning", "bonjour");
+		dictionary.put("After", "Apres");
+		dictionary.put("abdicate", "abdiquer");
+		dictionary.put("sleep", "dormir");
+		dictionary.put("Alter", "changer");
+		dictionary.put("arrest", "arreter");
+		
+		System.out.println(dictionary);
+		
+		List<String> keysWithA = returnValuesForKeysStartingWithA(dictionary);
+		System.out.println("\nThe resulting string with all 'A' or 'a' key values is as follows\n\t " + keysWithA);
+		
+		
+		
 		
 		
 		
@@ -248,7 +283,33 @@ public class Week04PracticeExercises {
 		return result.toString();
 	}
 	
-	//another method to practice StringBuilder
+	//another method to practice List
+	
+	public static List<String> halfTheList(List<String> listOfNames) {
+		List<String> resultList = new ArrayList<>();
+		
+		for(int index = 0; index<listOfNames.size(); index++) {
+			if (! (index % 2 == 0)) {
+				resultList.add(listOfNames.get(index));
+			}
+		}
+		return resultList;
+	}
+	
+	//This method will take a parameter of type Map <String, String>, and will return a List of String that contains
+	//every value of the map where the key starts with 'A' or 'a'
+	
+	private static List<String> returnValuesForKeysStartingWithA(Map<String, String> dictionary) {
+		List<String> resultList = new ArrayList<>();
+		
+		Set<String> keySet = dictionary.keySet();
+		for(String key: keySet) {
+			if (key.toLowerCase().charAt(0) == 'a') {
+				resultList.add(dictionary.get(key));
+			}
+		}
+		return resultList;
+	}
 
 	
 	
