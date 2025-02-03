@@ -152,16 +152,26 @@ public class Week04CodingProject {
 		double[] array1 = {4.0, 20.3, 8.2, 3,6 +5.75, 6.4};
 		double[] array2= {5.5, 6.4, 6.4, 4.8, 6.4};
 		
-		System.out.println(checkAveragesIfTrue(array1, array2));
+		System.out.println("\n11 - Array1 avg is greater than array2: " + checkAveragesIfTrue(array1, array2));
 		
 	
 		
 		/* 12. Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, 
 		 * and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-		 */ 
+		 */
+		
+		boolean isHotOutside = false;
+		double moneyInPocket = 35.25;
+		
+		System.out.println("\n12 - I will buy a drink: " + willBuyDrink(isHotOutside, moneyInPocket));
 		
 		
 		// 13. Create a method of your own that solves a problem. In comments, write what the method does and why you created it.
+		
+		boolean isTrashDay = true;
+		boolean trashCanFull = true;
+		
+		System.out.println("\n13 - I will take the garbage out: " + willTakeGarbageOut(isTrashDay, trashCanFull)); //Print whether or not I will take the garbage out.
 		
 		
 
@@ -173,7 +183,7 @@ public class Week04CodingProject {
 	} //end of main
 	
 	
-	
+	//------------------------------------------------------------------------
 	
 	
 	
@@ -230,6 +240,26 @@ public class Week04CodingProject {
 		}
 		
 		return sum1/array1.length > sum2/array2.length;
+	}
+	
+	
+	//Method 12
+	
+	public static boolean willBuyDrink (boolean isHotOutside, double moneyInPocket) {
+		if (isHotOutside && moneyInPocket > 10.50) {
+			return true;
+		}
+		return false;
+	}
+	
+	
+	//Method 13
+	
+	public static boolean willTakeGarbageOut(boolean isTrashDay, boolean trashCanFull) { //this method takes two booleans and returns a boolean
+		if (isTrashDay || trashCanFull) { //I will take the trash out if it's trash day or if the trash can is full
+			return true; //if either variable is true, return true
+		}
+		return false; //otherwise return false
 	}
 	
 	
